@@ -4,4 +4,4 @@ numpy==1.24.3
 scikit-learn==1.3.0
 matplotlib==3.7.1
 seaborn==0.12.2
-gdown
+gdown==4.7.1
