@@ -6,14 +6,13 @@ def download_files():
         os.makedirs("data")
 
     file_ids = {
-        "books.csv": "1EeMLA8mBSLTXJcszy6JLv1qFnGUY89UP",
-        "ratings.csv": "10rOVJ7t2-nMCjBixo3Uiw4qABhC3vMol",
-        "users.csv": "1wwN3NmAvdWBK9ILY9F68KRjty8UbZC0o"
+        "Books.csv": "1EeMLA8mBSLTXJcszy6JLv1qFnGUY89UP",
+        "Ratings.csv": "10rOVJ7t2-nMCjBixo3Uiw4qABhC3vMol",
+        "Users.csv": "1wwN3NmAvdWBK9ILY9F68KRjty8UbZC0o"
     }
 
     for filename, file_id in file_ids.items():
         output_path = os.path.join("data", filename)
-        gdown.download(f"https://drive.google.com/uc?id={file_id}", output_path, quiet=False)
+        if not os.path.exists(output_path):
+            gdown.download(f"https://drive.google.com/uc?id={file_id}", output_path, quiet=False)
 
-# Run this function once to fetch all three files
-download_files()
